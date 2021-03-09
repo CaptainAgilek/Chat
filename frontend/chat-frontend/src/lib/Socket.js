@@ -24,6 +24,11 @@ export const createSocket = (name, room, setJoined, setMessages, setUsers) => {
     ]);
   });
 
+  socket.on("disconnect", () => {
+    console.log("I am disconnected");
+    window.location.reload();
+  });
+
   socket.on("msg", (data) => {
     console.log("Received msg from server: ", data);
     setMessages((state) => [...state, data]);
@@ -49,7 +54,6 @@ export const sendMessageToRoom = (message, setMessages, name, room = ROOM) => {
   if (socket) {
     if (message) {
       setMessages((state) => (state ? [...state, message] : [message]));
-      console.log("ok");
       socket.emit("msg", { message: message.msg, room });
     }
   }

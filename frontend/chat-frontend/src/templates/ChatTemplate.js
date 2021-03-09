@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { JoinChatForm } from "../organisms/JoinChatForm";
-import { ChatContainer } from "../molecules/ChatContainer";
+import { ChatContainer } from "../organisms/ChatContainer";
 
 export function ChatTemplate() {
   const [joined, setJoined] = useState(false); // did user join chat?
