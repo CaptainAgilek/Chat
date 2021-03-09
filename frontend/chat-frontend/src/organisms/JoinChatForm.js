@@ -1,5 +1,5 @@
 import React from "react";
-import { createSocket, ROOM } from "../Socket";
+import { createSocket, ROOM } from "../lib/Socket";
 
 export function JoinChatForm({ name, setName, setJoined, messages, setMessages, setUsers }) {
 

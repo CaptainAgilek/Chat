@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChatInputBox } from "../molecules/ChatInputBox";
 import { ChatWrapper } from "../molecules/ChatWrapper";
-import { sendMessageToRoom } from "../Socket";
+import { sendMessageToRoom } from "../lib/Socket";
 
 export function ChatContainer({ name, messages, setMessages, users }) {
   const [msg, setMsg] = useState(null);
