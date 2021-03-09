@@ -73,7 +73,7 @@ const main = async () => {
       console.log("user disconnecting");
       const rooms = socket.rooms;
       if (rooms.size > 1) {
-        io.broadcast
+        socket.broadcast
           .to([...rooms][1])
           .emit("disconnected", socketMap.get(socket.id)); //notify users in room(except sender) about disconnected user
       }
