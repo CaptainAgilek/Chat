@@ -8,11 +8,12 @@ export const createSocket = (name, room, setJoined, setMessages, setUsers) => {
 
   socket.on("joined", (name) => {
     console.log("Someone joined chat room with username: ", name);
-    setUsers((state) => [...state, name]);
-    setMessages((state) => [
-      ...state,
-      { msg: `${name} joined chat.`, sender: "Server" },
-    ]);
+    setUsers((state) => (state ? [...state, name] : [name]));
+    setMessages((state) =>
+      state
+        ? [...state, { msg: `${name} joined chat.`, sender: "Server" }]
+        : [{ msg: `${name} joined chat.`, sender: "Server" }]
+    );
   });
 
   socket.on("disconnected", (name) => {
@@ -31,7 +32,7 @@ export const createSocket = (name, room, setJoined, setMessages, setUsers) => {
 
   socket.on("msg", (data) => {
     console.log("Received msg from server: ", data);
-    setMessages((state) => [...state, data]);
+    setMessages((state) => state ? [...state, data] : [data]);
   });
 
   console.log("Connecting socket to server...");
