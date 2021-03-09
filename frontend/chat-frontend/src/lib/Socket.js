@@ -45,7 +45,8 @@ export const createSocket = (name, room, setJoined, setMessages, setUsers) => {
         console.log("received users in room: ", response.usersInRoom);
         setUsers(response.usersInRoom);
       } else if (response.status === "name_taken") {
-        console.log("Name is already taken, please choose different name.");
+        console.log("Name is already taken, please choose a different name.");
+        alert("Name is already taken, please choose a different name.");
       }
     });
 };

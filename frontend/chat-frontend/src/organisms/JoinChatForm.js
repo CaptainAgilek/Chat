@@ -1,18 +1,24 @@
 import React from "react";
 import { createSocket, ROOM } from "../lib/Socket";
 
-export function JoinChatForm({ name, setName, setJoined, messages, setMessages, setUsers }) {
-
+export function JoinChatForm({
+  name,
+  setName,
+  setJoined,
+  messages,
+  setMessages,
+  setUsers,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
     createSocket(name, ROOM, setJoined, setMessages, setUsers);
   }
 
   return (
-    <div>
+    <div className="flex-container">
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+        <label className="name-label">
+          <span className="name-label">Name:</span>
           <input
             type="text"
             name="name"
