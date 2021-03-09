@@ -16,6 +16,7 @@ export function JoinChatForm({
 
   return (
     <div className="flex-container">
+      <img src="logo.PNG" />
       <form onSubmit={handleSubmit}>
         <label className="name-label">
           <span className="name-label">Name:</span>
