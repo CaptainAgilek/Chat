@@ -1,5 +1,5 @@
 # Frontend
-Frontend uses React and Socket.io client.
+Frontend uses React and Socket.io client. Project is using atomic design(https://bradfrost.com/blog/post/atomic-web-design/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
